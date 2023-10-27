@@ -155,7 +155,7 @@ All future workspaces launced will set the env vars for all the bash terminals o
 You can also set env vars in the `.gitpod.yml` but this can only contain non-sensitive env vars
 
 
-### AWS CLI Installation
+## AWS CLI Installation
 
 AWS CLI is installed for the project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli)
 
@@ -179,3 +179,62 @@ If it is succesful you should see a json payload that looks like this
 This is supposed to match your AWS credentials in your management console.
 
 We'll need to generate AWS CLI credentials from IAM User in order to use the AWS CLI.
+
+## Terraform Basics
+
+### Terraform Registry
+
+Terraform sources thier providers and modules from the Terraform Registry which is located at [registry.terraform.io](https://registry.terraform.io/)
+
+- **Providers** is the way you directly interact with an API to make it powered by terraform. (Is an interface to API that will allow you create resources in terraform)
+- **Modules** is a collection of files, a way of providing a template to utilize commonly used actions. (a way to make large amount of terraform code modular,portable and sharable) 
+
+[Random Terraform Provider](https://registry.terraform.io/providers/hashicorp/random)
+
+### Terraform Console
+
+We can see a list of all the Terraform commands by simply typing `terraform` in the terminal
+
+#### Terraform init
+
+`terraform init`
+
+At the start of a new terraform project we will run `terraform init` to download the binaries for the terraform providers that we'll use in this project. This is how we initialize a new project.
+
+#### Terraform Plan
+
+`terraform plan`
+
+This will generate out a changeset, about the state of our infrastructure and what will be changed.
+
+We can output this changeset `terraform plan` to be passed to an apply but often you can just ignore outputting.
+
+#### Terraform Apply
+
+`terraform apply`
+
+This will run a plan and pass the changeset to be executed by terraform. Apply should prompt us yes or no.
+
+If we want to automatically approve an apply without the prompt we can provide the auto approve flag `--auto-approve` with the terraform plan i.e `terraform plan --auto-approve`
+
+### Terraform Lock Files
+
+`.terraform.lock.hcl` contains the locked versioning for providers or modules that should be used with this project.
+
+The terraform Lock File **should be committed** to your Version Control System (VSC) eg Github
+
+### Terraform State Files
+
+`terraform.tfstate` contains information about the current state of your infrastructure.
+
+This file **should not be committed** to your VSC.
+
+This file can contain sensitive data.
+
+If you lose this file you lose knowing the state of your infrastructure.
+
+`.terraform.tfstate.backup` is the previous state file state
+
+### Terraform Directory (folder)
+
+`.terraform` directory contains binaries of terraform providers.
