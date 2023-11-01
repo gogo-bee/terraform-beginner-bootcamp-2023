@@ -281,3 +281,5 @@ Provide the following code (replace your token in the file)
 However i did not run into any problems with the `terraform login`. When i did this it prompted a yes or no, it brought out a nano file (i pressed print) then another page which contains a link to generate the token, i clicked into the link and created the token, copied and pasted it (cmnd + v + enter) and i was logged in.
 
 If this method doesnt work for you then you manually do it. 
+
+We have automated this workaround using bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
