@@ -95,14 +95,14 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle Before, Init, command
+## Gitpod Lifecycle Before, Init, command
 
 We need to be careful when the Init because it will not rerun if we restart an existing workspace. 
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
 
-### Working with Env vars
+## Working with Env vars
 
 ### env command
 
@@ -231,7 +231,7 @@ You can also use the auto approve to skip the approve prompt eg `terraform destr
 
 The terraform Lock File **should be committed** to your Version Control System (VSC) eg Github
 
-### Terraform State Files
+#### Terraform State Files
 
 `terraform.tfstate` contains information about the current state of your infrastructure.
 
