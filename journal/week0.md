@@ -1,5 +1,35 @@
-# Terraform Beginner Bootcamp 2023
+# Terraform Beginner Bootcamp 2023 - Week 0
 
+
+- [Semantic Versioning](#semantic-versioning)
+- [Install the Terraform CLI](#install-the-terraform-cli)
+  * [Considerations with the Terraform CLI changes](#considerations-with-the-terraform-cli-changes)
+  * [Considerations for Linux distribution](#considerations-for-linux-distribution)
+  * [Refactoring into Bash Sctipts](#refactoring-into-bash-sctipts)
+    + [Shebang Considerations](#shebang-considerations)
+    + [Execution Considerations](#execution-considerations)
+    + [Linux Permissions Consideration](#linux-permissions-consideration)
+- [Gitpod Lifecycle](#gitpod-lifecycle)
+- [Working with Env vars](#working-with-env-vars)
+  * [env command](#env-command)
+  * [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+  * [Printing Env Vars](#printing-env-vars)
+  * [Scoping of Env Vars](#scoping-of-env-vars)
+  * [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
+- [AWS CLI Installation](#aws-cli-installation)
+- [Terraform Basics](#terraform-basics)
+  * [Terraform Registry](#terraform-registry)
+  * [Terraform Console](#terraform-console)
+    + [Terraform init](#terraform-init)
+    + [Terraform Plan](#terraform-plan)
+    + [Terraform Apply](#terraform-apply)
+    + [Terraform Destroy](#terraform-destroy)
+    + [Terraform Lock Files](#terraform-lock-files)
+    + [Terraform State Files](#terraform-state-files)
+    + [Terraform Directory folder](#terraform-directory-folder)
+- [Issues with Terraform Cloud Login and Gitpod Workspace](#issues-with-terraform-cloud-login-and-gitpod-workspace)
+
+## Semantic Versioning 
 
 This project is going to utilize semantic versioning for its tagging.
 [semver.org](https://semver.org/)
@@ -94,16 +124,16 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle (Before, Init, command)
+## Gitpod Lifecycle
 
 We need to be careful when the Init because it will not rerun if we restart an existing workspace. 
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
 
-### Working with Env vars
+## Working with Env vars
 
-### `env` comman
+### env command
 
 We can list out all the Environment Variables (Env Vars) using the `env` command
 
@@ -130,18 +160,18 @@ HELLO='world'
 
 echo $HELLO
 ```
-#### Printing Env Vars
+### Printing Env Vars
 
 We can print an env var using echo eg `echo $HELLO`
 
-#### Scoping of Env Vars
+### Scoping of Env Vars
 
 When you open up new bash terminals in GITPOD it will not be aware of env vars that you have set in another window.
 
 If you want env vars to persist across all future bash terminals that are open you need to set Env Vars in your bash profile. eg `bash_profile`
 
 
-#### Persisting Env Vars in Gitpod
+### Persisting Env Vars in Gitpod
 
 We can persist env vars in gitpod by storing them in Gitpod secrets storage.
 
@@ -230,7 +260,7 @@ You can also use the auto approve to skip the approve prompt eg `terraform destr
 
 The terraform Lock File **should be committed** to your Version Control System (VSC) eg Github
 
-### Terraform State Files
+#### Terraform State Files
 
 `terraform.tfstate` contains information about the current state of your infrastructure.
 
@@ -242,7 +272,7 @@ If you lose this file you lose knowing the state of your infrastructure.
 
 `.terraform.tfstate.backup` is the previous state file state
 
-#### Terraform Directory (folder)
+#### Terraform Directory folder
 
 `.terraform` directory contains binaries of terraform providers.
 
