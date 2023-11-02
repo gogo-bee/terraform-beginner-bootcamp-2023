@@ -1,10 +1,5 @@
 # Terraform Beginner Bootcamp 2023
 
-## Table of Contents
-
-- [Semantic Versioning](#semantic-versioning)
-- [Install the Terraform CLI](#install-the-terraform-cli)
-
 ## Semantic Versioning 
 
 This project is going to utilize semantic versioning for its tagging.
@@ -100,7 +95,7 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-### Github Lifecycle (Before, Init, command)
+### Github Lifecycle Before, Init, command
 
 We need to be careful when the Init because it will not rerun if we restart an existing workspace. 
 
@@ -109,7 +104,7 @@ https://www.gitpod.io/docs/configure/workspaces/tasks
 
 ### Working with Env vars
 
-### `env` comman
+### env command
 
 We can list out all the Environment Variables (Env Vars) using the `env` command
 
@@ -248,7 +243,7 @@ If you lose this file you lose knowing the state of your infrastructure.
 
 `.terraform.tfstate.backup` is the previous state file state
 
-#### Terraform Directory (folder)
+#### Terraform Directory folder
 
 `.terraform` directory contains binaries of terraform providers.
 
