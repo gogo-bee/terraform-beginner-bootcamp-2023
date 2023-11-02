@@ -2,7 +2,7 @@
 
 
 ## Weekly Journals
--[Week 0 Journal](journal/weeko.md)
+-[Week 0 Journal](journal/week0.md)
 
 ## Extras
 -[Github Markdown TOC Generator](http://ecotrust-canada.github.io/markdown-toc/)
