@@ -8,3 +8,12 @@ variable "user_uuid" {
   }
 }
 
+variable "bucket_name" {
+  description = "Name of the S3 bucket"
+  type        = string
+
+  validation {
+    condition     = length(var.bucket_name) <= 63 && length(var.bucket_name) >= 3
+    error_message = "Bucket name must be between 3 and 63 characters long"
+  }
+} 
