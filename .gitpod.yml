@@ -1,5 +1,6 @@
 tasks:
   - name: terraform
+    before: |
     env:
      TF_LOG: DEBUG
      before: |
